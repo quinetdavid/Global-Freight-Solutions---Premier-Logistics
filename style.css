@@ -1,0 +1,453 @@
+/* Variables for easy customization */
+:root {
+    --primary-color: #004d99; /* Deep Professional Blue */
+    --secondary-color: #ff9900; /* Bright Orange/Amber for Accent */
+    --text-color: #333333;
+    --light-bg: #f4f7f9;
+    --dark-bg: #1c2a39;
+    --font-stack: 'Poppins', sans-serif;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: white;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Utilities & Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--dark-bg);
+    border-color: var(--dark-bg);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+.btn-header {
+    padding: 8px 18px;
+    font-size: 0.9em;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.btn-header:hover {
+    background-color: #e68a00; /* Slightly darker secondary color */
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+/* Header & Navigation */
+.header {
+    background: var(--dark-bg);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+.logo strong {
+    color: var(--secondary-color);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-left: 30px;
+}
+
+.nav a {
+    color: white;
+    padding: 5px 0;
+    position: relative;
+    text-decoration: none;
+}
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s;
+}
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('truck-hero-bg.jpg') no-repeat center center / cover;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.hero strong {
+    color: var(--secondary-color);
+}
+
+.hero-actions a:first-child {
+    margin-right: 20px;
+}
+
+/* Tracking Widget */
+.tracking-widget {
+    background-color: var(--primary-color);
+    padding: 30px 0;
+    text-align: center;
+}
+.tracking-widget h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+.tracking-form {
+    display: flex;
+    justify-content: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+.tracking-form input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+}
+.tracking-form button {
+    border-radius: 0 5px 5px 0;
+    padding: 15px 30px;
+    font-size: 1em;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.about-content {
+    flex: 1;
+    max-width: 50%;
+}
+.about-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+.about-content li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+.about-content li i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.about img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Quote Section */
+.cta-quote {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+.cta-quote h2 {
+    margin-bottom: 30px;
+}
+.quote-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.quote-form input, .quote-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+}
+.quote-form textarea {
+    grid-column: 1 / 3;
+    resize: vertical;
+    min-height: 100px;
+}
+.quote-form .btn-primary {
+    grid-column: 1 / 3;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.quote-form .btn-primary:hover {
+    background-color: #e68a00;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-bg);
+    color: var(--light-bg);
+    padding: 40px 0 20px;
+    font-size: 0.9em;
+}
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3a4755;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-col {
+    min-width: 200px;
+}
+.footer-col h4 {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+.footer-col a {
+    color: var(--light-bg);
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+.footer-col a:hover {
+    color: var(--secondary-color);
+}
+.footer-col p {
+    margin: 5px 0;
+}
+.footer-col i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+}
+.footer-bottom a {
+    color: var(--secondary-color);
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .header .btn-header {
+        display: none; /* Hide button on smaller screens */
+    }
+    .about .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-content, .about img {
+        max-width: 100%;
+    }
+    .about img {
+        margin-top: 30px;
+    }
+    .about-content ul {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-actions a:first-child {
+        margin-right: 0;
+    }
+    .tracking-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tracking-form input, .tracking-form button {
+        border-radius: 5px !important;
+    }
+    .service-cards {
+        gap: 20px;
+    }
+    .card {
+        max-width: 45%;
+    }
+    .quote-form {
+        grid-template-columns: 1fr;
+    }
+    .quote-form input, .quote-form textarea, .quote-form .btn-primary {
+        grid-column: 1 / 2;
+    }
+    .footer-links {
+        flex-direction: column;
+    }
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .nav li {
+        margin: 5px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        max-width: 100%;
+    }
+}
